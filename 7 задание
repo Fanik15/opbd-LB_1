@@ -1,0 +1,38 @@
+from tkinter import *
+root = Tk()
+def change_text_size(event):
+ text_width = int(width_entry.get())
+ text_height = int(height_entry.get())
+ t.config(width=text_width, height=text_height)
+def white_color(event):
+ t['bg'] = 'white'
+
+
+def grey_color(event):
+ t['bg'] = 'lightgrey'
+
+
+f1 = Frame()
+f1.pack()
+f = Frame(f1)
+f.pack(side=LEFT)
+width_entry = Entry(f, width=3)
+width_entry.pack()
+width_entry.focus_set()
+height_entry = Entry(f, width=3)
+height_entry.pack()
+b = Button(f1, text="Изменить")
+b.pack(side=LEFT)
+b.bind('<Button-1>', change_text_size)
+b.bind('<Return>', change_text_size)
+width_entry.bind('<Return>', change_text_size)
+height_entry.bind('<Return>', change_text_size)
+f2 = Frame()
+f2.pack()
+t = Text(f2, width=20, height=10, bg='lightgrey')
+t.pack()
+t.bind('<FocusIn>', white_color)
+t.bind('<FocusOut>', grey_color)
+root.mainloop()
+l.bind('<Double-Button-1>', give_item)
+root.mainloop()
